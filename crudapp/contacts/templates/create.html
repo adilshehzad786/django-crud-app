@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="POST" class="post-form" action="/create">
+    {% csrf_token %}  
+
+    <label>Contact ID</label>
+    {{ form.cid }}
+
+    <label>Name</label>
+    {{ form.name }}
+
+    <label>Email</label>
+    {{ form.email }}
+    
+    <label>Phone</label>
+    {{ form.phone }}
+
+    <button type="submit">Submit</button>  
+</form>  
+{% endblock %}

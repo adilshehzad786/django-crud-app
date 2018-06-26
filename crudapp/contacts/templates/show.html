@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<table class="">  
+    <thead>  
+    <tr>  
+        <th>Contact ID</th>  
+        <th>Contact Name</th>  
+        <th>Contact Email</th>  
+        <th>Contact Contact</th>  
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+    {% for contact in contactData %}  
+    <tr>  
+        <td>{{ contact.cid }}</td>  
+        <td>{{ contact.name }}</td>  
+        <td>{{ contact.email }}</td>  
+        <td>{{ contact.phone }}</td>  
+        <td>  
+            <a href="/edit/{{ contact.id }}">Edit</a>  
+            <a href="/delete/{{ contact.id }}">- Delete</a>  
+        </td>  
+    </tr>  
+    {% endfor %}  
+    </tbody>  
+</table>
+{% endblock %}
